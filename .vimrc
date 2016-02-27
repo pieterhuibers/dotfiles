@@ -2,7 +2,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-colorscheme molokai
+colorscheme monokai-chris
 hi Normal ctermbg=none
 
 set number
