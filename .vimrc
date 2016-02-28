@@ -9,3 +9,4 @@ set number
 
 nmap ,v :e ~/.vimrc <CR>
 nmap ,r :source ~/.vimrc <CR>
+nmap <C-n> :NERDTreeToggle<CR>
