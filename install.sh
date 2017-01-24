@@ -1,13 +1,15 @@
- #!/bin/bash 
+#!/bin/bash 
+
+#Bootstrap by installing git
+echo 'Installing git'
 sudo apt-get update
-sudo apt-get install vim tmux zsh
+sudo apt-get install git
 
-#install zsh and oh-my-zsh
-chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo 'Cloning dotfiles repo'
+cd ~
+git clone https://github.com/pieterhuibers/dotfiles
 
-#install pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-cd ~/.vim/bundle
-git clone https://github.com/scrooloose/nerdtree
-git clone https://github.com/flazz/vim-colorschemes
+echo 'Installing software'
+sudo apt-get install vim zsh tmux gnome-terminal
+
+echo 'Setting up vim environment'
