@@ -7,6 +7,12 @@ syntax on
 filetype plugin indent on
 colorscheme monokai-chris
 
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'badwolf'
+set laststatus=2
+
+exec "set listchars=tab:\uBB-,trail:\uB7,nbsp:~,eol:\uAC"
+
 " Layout
 set number
 set tabstop=2
@@ -38,10 +44,12 @@ nmap <leader>wq :wq<CR>
 nmap <C-T> :tabnew<CR>
 nmap <C-h> :tabp<CR>
 nmap <C-l> :tabn<CR>
+nmap <leader>l :set list!<CR>
 
 " Plugin-dependent mappings
 nmap <silent><C-N> :NERDTreeToggle<CR>
 
+" Change cursor shape when switching between normal mode and insert mode
 if has("autocmd")
     au InsertEnter *
         \ if v:insertmode == 'i' |

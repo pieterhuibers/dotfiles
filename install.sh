@@ -30,3 +30,6 @@ ln -s $TMUX/.tmux.conf ~/.tmux.conf
 
 echo 'Symlinking bin directory'
 ln -sT $BIN ~/.bin
+
+echo 'Sourcing relevant dotfiles'
+source ~/.zshrc
