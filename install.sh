@@ -4,6 +4,7 @@ export DOTFILES=$HOME/dotfiles
 export VIM=$DOTFILES/vim
 export ZSH=$DOTFILES/zsh
 export TMUX=$DOTFILES/tmux
+export TMUX=$DOTFILES/bin
 
 echo 'Installing software'
 sudo apt-get install gnome-terminal vim-gnome zsh tmux
@@ -26,3 +27,6 @@ rm -rf fonts
 
 echo 'Setting up tmux'
 ln -s $TMUX/.tmux.conf ~/.tmux.conf
+
+echo 'Symlinking bin directory'
+ln -sT $BIN ~/.bin

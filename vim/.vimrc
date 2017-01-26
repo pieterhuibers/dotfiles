@@ -1,5 +1,6 @@
 execute pathogen#infect()
 set t_Co=256
+set timeoutlen=1000 ttimeoutlen=0
 
 " Visual
 syntax on
@@ -40,3 +41,14 @@ nmap <C-l> :tabn<CR>
 
 " Plugin-dependent mappings
 nmap <silent><C-N> :NERDTreeToggle<CR>
+
+if has("autocmd")
+    au InsertEnter *
+        \ if v:insertmode == 'i' |
+        \   silent execute "!gnome-terminal-cursor-shape.sh ibeam" |
+        \ elseif v:insertmode == 'r' |
+        \   silent execute "!gnome-terminal-cursor-shape.sh underline" |
+        \ endif
+    au InsertLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
+    au VimLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
+endif

@@ -12,4 +12,7 @@ zstyle ":completion:*" list-colors ""
 
 PROMPT='%B%F{red}%~ ➜%f%b '
 
+PATH=$PATH:$HOME/bin
+
 source $ZSH/aliases.zsh
+source $ZSH/theme.zsh
